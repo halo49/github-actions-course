@@ -1,0 +1,28 @@
+name: 03 - Workflow Runners
+
+on:
+  workflow_dispatch
+
+jobs:
+  ubuntu-echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show OS
+        run: |
+          echo "This job is running on an Ubuntu runner."
+          echo "Runner OS: $RUNNER_OS"
+
+  # Este job no se ejecuta correctamente ya que se tiene que agregar el uso de shell
+  #   runs-on: windows-latest
+  #   steps:
+  #     - name: Show OS
+  #       run: |
+  #         echo "This job is running on a Windows runner."
+  #         echo "Runner OS: $RUNNER_OS"
+
+  # Este job gasta demasiados recursos solo se deja por documentación, puede acabarse tu cuota mensual de GitHub Actions si lo ejecutas, así que ten cuidado al descomentar este bloque.
+  # mac-echo:
+  #   runs-on: macos-latest
+  #   steps:
+  #     - name: Show OS
+  #       run: echo "This job is running on a MacOS runner."
