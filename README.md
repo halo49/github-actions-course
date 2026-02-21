@@ -100,3 +100,14 @@ steps:
     shell: bash 
     run: echo "I'm running on bash."
 ```
+
+En GitHub de Actions en donde se ve la ejecución del runner que se configuro en este caso "Show OS" se encuentran estas opciones /Set up job/Runner Image/Included Software/ y dentro esta un [link](https://github.com/actions/runner-images/blob/win25/20260217.31/images/windows/Windows2025-Readme.md) en donde se puede apreciar que el bash esta incluído y también se pueden ver más instalaciones por ejemplo:
+
+Installed Software/Language and Runtime
+
+- Bash 5.2.37(1)-release
+- Node 22.22.0
+- PHP 8.5.3
+- Python 3.12.10
+- etc.
+
