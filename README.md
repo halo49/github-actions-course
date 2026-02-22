@@ -175,9 +175,9 @@ jobs:
 > Try to use de Verified by GitHub
 
 ### Creating the project
-- create th directory called "04-using-actions"
-- go inside this directory
-- execute in the terminal the next command
+- Create th directory called "04-using-actions"
+- Go inside this directory
+- Execute in the terminal the next command
 ```
 npx create-react-app --template typescript react-app
 ```
@@ -185,8 +185,8 @@ say yes to install the necessary dependencies
 
 check that the installed version of node is v20.9.0 (same instructor's version) in my case was 20.20.0
 
-- go to the directory react-app
-- execute the command
+- Go to the directory react-app
+- Execute the command
   ```npm run start```
   you can check the url http://localhost:3000/ and look for the React app welcome screen
 
@@ -215,3 +215,5 @@ just list this directories
 - 03-workflow-runners
 - 04-using-actions
 - And the README.md file
+
+> In the section called Checkout Code you can see the repository's fetching

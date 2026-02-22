@@ -9,8 +9,14 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
-            - name: Printing Folders
-              run: ls -la
+            - name: Set up Node
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20.x'
+            - name: Install dependencies
+              run: npm ci
+              working-directory: 04-using-actions/react-app # Esto se agrega porque si no el comando anterior se ejecutaría en la raíz del repositorio y no encontraría el package.json de nuestra aplicación de React
+            
 
 
 # Estos son los pasos que se tendrian que ejecutar para construir nuestra aplicación con el workflow
