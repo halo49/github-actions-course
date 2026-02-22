@@ -101,7 +101,7 @@ steps:
     run: echo "I'm running on bash."
 ```
 
-En GitHub de Actions en donde se ve la ejecución del runner que se configuro en este caso "Show OS" se encuentran estas opciones /Set up job/Runner Image/Included Software/ y dentro esta un [link](https://github.com/actions/runner-images/blob/win25/20260217.31/images/windows/Windows2025-Readme.md) en donde se puede apreciar que el bash esta incluído y también se pueden ver más instalaciones por ejemplo:
+En GitHub en el apartado de Actions en donde se ve la ejecución del runner que se configuro en este caso "Show OS" se encuentran estas opciones /Set up job/Runner Image/Included Software/ y dentro esta un [link](https://github.com/actions/runner-images/blob/win25/20260217.31/images/windows/Windows2025-Readme.md) en donde se puede apreciar que el bash esta incluído y también se pueden ver más instalaciones por ejemplo:
 
 Installed Software/Language and Runtime
 
@@ -111,3 +111,107 @@ Installed Software/Language and Runtime
 - Python 3.12.10
 - etc.
 
+# Using Third-Party Actions
+
+## Actions
+Custom applications to perform complex, frequently repeated task
+
+### example
+
+```
+name: My NPM package workflow
+on: push
+
+jobs:
+  node-20-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm test
+      - run: npm publish ...
+```
+
+the AI recommends the next code:
+
+```
+name: My NPM package workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  node-20-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Publish package
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+```
+
+[GitHub Marketplace](https://github.com/marketplace)
+[Marketplace - Actions](https://github.com/marketplace?type=actions)
+
+> Try to use de Verified by GitHub
+
+### Creating the project
+- create th directory called "04-using-actions"
+- go inside this directory
+- execute in the terminal the next command
+```
+npx create-react-app --template typescript react-app
+```
+say yes to install the necessary dependencies
+
+check that the installed version of node is v20.9.0 (same instructor's version) in my case was 20.20.0
+
+- go to the directory react-app
+- execute the command
+  ```npm run start```
+  you can check the url http://localhost:3000/ and look for the React app welcome screen
+
+At this moment this yaml file 04-using-actions.yaml 
+
+```
+name: 04 - Using Actions
+
+on: 
+    workflow_dispatch
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - name: Printing Folders
+              run: ls -la
+```
+
+just list this directories
+
+- 01-building-blocks
+- 02-workflow-events
+- 03-workflow-runners
+- 04-using-actions
+- And the README.md file

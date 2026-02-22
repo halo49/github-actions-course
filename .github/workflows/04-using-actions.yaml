@@ -1,0 +1,19 @@
+name: 04 - Using Actions
+
+on: 
+    workflow_dispatch
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - name: Printing Folders
+              run: ls -la
+
+
+# Estos son los pasos que se tendrian que ejecutar para construir nuestra aplicación con el workflow
+# 0. Checkout del código desde el repositorio
+# 1. Instalación de dependencias de nuestra aplicación de React
+# Ejecutar las pruebas automatizadas de nuestra aplicación
