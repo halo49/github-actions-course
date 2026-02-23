@@ -217,3 +217,30 @@ just list this directories
 - And the README.md file
 
 > In the section called Checkout Code you can see the repository's fetching
+
+## Event Filters
+Specify under wich conditions a specific event triggers our workflow
+
+<table>
+  <tr>
+    <td colspan="2" align="center"><b>push event</b></td>
+  </tr>
+  <tr>
+    <td>branches<br>Specifies wich branches must match<br>in order for the workflow to execute</td>
+    <td>branches_ignore<br>Specifies wich branches must<br> not match in order for the workflow to executed</td>
+  </tr>
+<tr>
+    <td>tags</td>
+    <td>tags_ignore</td>
+  </tr>
+  <tr>
+    <td>paths</td>
+    <td>paths_ignore</td>
+  </tr>
+    <td colspan="2" align="center"><b>...</b></td>
+</table>
+
+
+> if multiple filters are specied, all of them must be satisfied for the workflow to run
+
+[Workflow syntax](https://www.udemy.com/course/mastering-github-actions-beginner-to-expert/learn/lecture/41502728#overview)
