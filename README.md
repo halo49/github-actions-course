@@ -244,3 +244,35 @@ Specify under wich conditions a specific event triggers our workflow
 > if multiple filters are specied, all of them must be satisfied for the workflow to run
 
 [Workflow syntax](https://www.udemy.com/course/mastering-github-actions-beginner-to-expert/learn/lecture/41502728#overview)
+
+## Activity Types
+
+Specify wich types of certain triggers execute our workflow
+
+Many triggers have multiple types we can leverage
+
+
+<table>
+  <tr>
+    <td colspan="2" align="center"><b>pull_request event</b></td>
+  </tr>
+  <tr>
+    <td>opened<br>Runs the workflow whenever<br> a PR is opened</td>
+    <td>synchronize<br>Runs the workflow whenever a new<br> commit is pushed to the HEAD<br> ref of the PR</td>
+  </tr>
+<tr>
+    <td>closed</td>
+    <td>assigned</td>
+  </tr>
+  <tr>
+    <td>labeled</td>
+    <td>edited</td>
+  </tr>
+    <td colspan="2" align="center"><b>...</b></td>
+</table>
+
+> We can specify one or more Activity Types
+
+> Activity Types and Event Filters can be combined when needed
+
+[Events that triggers workflows](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows)
