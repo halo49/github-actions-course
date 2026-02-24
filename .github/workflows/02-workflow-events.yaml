@@ -1,6 +1,7 @@
 name: 02 - Workflow Events
 on: 
-    pull_request:
+    # Se comenta el pull_request para no tener conflicto con el 05-1-filters-activity-types.yaml, si quieres probar el pull_request descomenta esta sección y comenta la sección de workflow_dispatch
+    #pull_request:
     workflow_dispatch:
 
 
