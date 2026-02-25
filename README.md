@@ -276,3 +276,74 @@ Many triggers have multiple types we can leverage
 > Activity Types and Event Filters can be combined when needed
 
 [Events that triggers workflows](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows)
+
+# Workflow Contexts
+
+Access information about runs, variables, jobs and much more
+
+GitHub provides multiple sources of data in different context so that we can easily provide all the necessary information to our workloads
+
+<table>
+  <tr>
+    <td 
+      style="background-color: lightblue;" 
+      align="center"><b>github</b></td>
+    <td 
+      style="background-color: lightgreen;" 
+      align="center"><b>env</b></td>
+    <td 
+      style="background-color: pink;" 
+      align="center"><b>inputs</b></td>
+    <td 
+      style="background-color: orange;" 
+      align="center"><b>vars</b></td>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        <li>Commit SHA</li>
+        <li>Event Name</li>
+        <li>Ref of branch<br>
+        or tag triggering<br>
+        the workflow
+        </li>
+      </ul>
+    </td>
+    <td>
+      Contains variables <br>
+      that have been <br>
+      defined in a <br>
+      workflow, job,<br>
+      or step. Changes<br>
+      based on wich<br>
+      part of the <br>
+      workflow is <br>
+      executing
+    </td>
+    <td>
+      Contains input <br>
+      properties passed<br>
+       via the keyword <br>
+       <b>with</b> to an <br>
+       action, to reusable<br>
+        workflow, or to <br>
+        manually triggered <br>
+        workflow
+    </td>
+    <td>
+      Contains custom <br>
+      configuration variables<br>
+       set at the organization,<br>
+        repository and <br>
+        environment levels
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><b>secrets</b></td>
+    <td align="center"><b>matrix</b></td>
+    <td align="center"><b>needs</b></td>
+    <td align="center"><b>...</b></td>
+  </tr>
+</table>
+
+[Workflows Contexts](https://docs.github.com/es/actions/reference/workflows-and-actions/contexts)
